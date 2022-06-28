@@ -1,7 +1,7 @@
 <template>
   <div>
-    <van-nav-bar title="登录" left-arrow>
-      <van-icon name="cross" slot="left" />
+    <van-nav-bar title="登录" left-arrow  @click-left="$router.back()">
+      <van-icon name="cross" slot="left"  />
       <!-- <template #right>
         <van-icon name="search" size="18" />
       </template> -->
@@ -16,7 +16,8 @@
           { pattern: /^(?:(?:\+|00)86)?1\d{10}$/ },
         ]"
       >
-        <i slot="left-icon" class="toutiao toutiao-shouji"></i>
+        <!-- <i slot="left-icon" class="toutiao toutiao-shouji"></i> -->
+        <MyIcon slot="left-icon" name="shouji"></MyIcon>
       </van-field>
       <van-field
         v-model="code"
@@ -72,6 +73,7 @@ export default {
         const res = await login(values)
         console.log(res.data.data)
         this.$store.commit('setuser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (error) {
         console.log(error)
       }
