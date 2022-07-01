@@ -45,12 +45,12 @@
     <!-- 两个选框 -->
     <div>
       <van-grid clickable :column-num="2">
-        <van-grid-item text="收藏" to="/">
+        <van-grid-item text="收藏">
           <template #icon>
             <i class="toutiao toutiao-shoucang"></i>
           </template>
         </van-grid-item>
-        <van-grid-item icon="clock-o" text="历史" to="/">
+        <van-grid-item icon="clock-o" text="历史">
           <template #icon> <i class="toutiao toutiao-lishi"></i> </template
         ></van-grid-item>
       </van-grid>
