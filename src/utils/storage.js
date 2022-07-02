@@ -11,6 +11,7 @@ export function getItem (key) {
 // 添加
 export function setItem (key, value) {
   if (typeof value === 'object') {
+    console.log(value)
     window.localStorage.setItem(key, JSON.stringify(value))
   } else {
     window.localStorage.removeItem(key, value)

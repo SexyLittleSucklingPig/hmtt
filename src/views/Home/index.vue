@@ -2,7 +2,12 @@
   <div>
     <van-nav-bar fixed>
       <template #title>
-        <van-button round type="info" icon="search" class="search-btn"
+        <van-button
+          round
+          type="info"
+          icon="search"
+          class="search-btn"
+          to="/search"
           >搜索</van-button
         >
       </template>
@@ -63,7 +68,8 @@ export default {
     async getMychannels () {
       const channels = getItem(CHANNEL)
       if (!(this.$store.state.user && this.$store.state.user.token) && channels) {
-        this.channels = channels
+        console.log(channels)
+        this.Mychannels = channels
       } else {
         try {
           const res = await getchannels()
