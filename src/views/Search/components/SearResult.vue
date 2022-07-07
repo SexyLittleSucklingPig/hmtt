@@ -60,7 +60,7 @@ export default {
       this.page++
       this.getSearchResult()
     },
-    // 下拉刷新
+    // 下拉刷新功能
     onRefresh () {
       this.page = 1
       this.getSearchResult()

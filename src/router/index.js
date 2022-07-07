@@ -7,6 +7,7 @@ const My = () => import('@/views/My')
 const Question = () => import('@/views/Question')
 const Login = () => import('@/views/Login')
 const Search = () => import('@/views/Search')
+const Article = () => import('@/views/Article')
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,6 +42,12 @@ const routes = [
   {
     path: '/search',
     component: Search
+  },
+  {
+    path: '/article/:article_id',
+    name: 'article',
+    props: true, // params相关的路由让组件和路由解耦
+    component: Article
   }
 ]
 
